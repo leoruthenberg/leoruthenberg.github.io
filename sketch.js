@@ -4,6 +4,7 @@ let score = 0
 let mouseClicks=0
 let misses = 0
 
+
 function setup() {
   createCanvas(windowWidth,windowHeight);
   for (let i = 0; i < 20; i++) {
