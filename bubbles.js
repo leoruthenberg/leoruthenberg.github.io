@@ -5,11 +5,34 @@ class Bubble {
     this.r = r;
     this.color = (255, 50);
     this.colorx = 0;
-  }
 
+    this.brushxdir = 1
+    this.brushydir = 1
+    this.timer = 0
+  }
+  
   move() {
-    this.x = this.x + random(-3, 3);
-    this.y = this.y + random(-3, 3);
+    this.randy = random(1, 10);
+    this.timer += 1
+    if (this.x >= width || this.x <= 10) {
+      this.brushxdir *= -1
+    }
+    if (this.brushy >= height || this.brushy <= 10) {
+      this.brushydir *= -1
+    }
+    if (this.randy > 9) {
+      this.brushxdir *= -1
+    }
+    if (this.randy < 2) {
+      this.brushydir *= -1
+    }
+    if (this.randy > 9.95) {
+      this.x = random(100, width - 100);
+      this.y = random(50, height - 50);
+    }
+
+    this.x += this.brushxdir
+    this.y += this.brushydir
   }
 
   show() {
