@@ -5,7 +5,7 @@ let mouseClicks=0
 let misses = 0
 
 function setup() {
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(windowWidth, windowHeight);
   for (let i = 0; i < 20; i++) {
     bub[i] = new Bubble(random(width), random(height), 20);
   }
